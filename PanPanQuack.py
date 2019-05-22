@@ -73,7 +73,8 @@ async def msg(ctx, *, msg=None):
             embed2.set_footer(text=client.user.name, icon_url=client.user.avatar_url)
             await ctx.send(embed=embed2)
         else:
-            await ctx.send('**Você não tem permissão para usar este comando !**')
+            embed3 = discord.Embed(name='🚫 N E G A D O ❗', description='**Você não tem permissão para usar este comando !**', color=COR)
+            await ctx.send(embed=embed3)
 
 
 client.run(str(os.environ.get('TOKEN')))
