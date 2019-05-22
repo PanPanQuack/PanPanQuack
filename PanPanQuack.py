@@ -38,8 +38,8 @@ async def setar(ctx, *, img=None):
         if img is None:
             await ctx.send('**Você não pode deixar a imagem em branco !**')
         else:
-            global set1
-            set1 = img
+            global set_1
+            set_1 = img
             embedsetar = discord.Embed(title='<:frame_photo:462594078899568651> `IMAGEM SETADA !`', description='`Agora prossiga com o comando: "pq!msg".`', color=0x22eb7b)
             embedsetar.set_footer(text=client.user.name, icon_url=client.user.avatar_url)
             await ctx.send(embed=embedsetar)
@@ -60,7 +60,7 @@ async def msg(ctx, *, msg=None):
             s = 0
             for member in x:
                 embed1 = discord.Embed(title="", url="", color=0x5c02db, description='``Ei`` <@!{}>, ``tenho uma mensagem pra você !`` \n {}'.format(member.id, msg))
-                embed1.set_image(url=set1)
+                embed1.set_image(url=set_1)
                 embed1.set_footer(text=client.user.name, icon_url=client.user.avatar_url)
                 try:
                     await member.send(embed=embed1)
